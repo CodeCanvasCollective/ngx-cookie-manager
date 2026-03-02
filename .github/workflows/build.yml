@@ -1,20 +1,44 @@
-name: Build and Test
+name: Build, Test and Publish
 
 on:
   push:
     branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
+  release:
+    types: [created]
+
+# Required for Trusted Publishing (OIDC)
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20.x'
-    - run: npm install
-    - run: npm run build
-    - run: npm run test -- --watch=false --browsers=ChromeHeadless
+        registry-url: 'https://registry.npmjs.org'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Lint
+      run: npm run lint --if-present
+      
+    - name: Build Library
+      run: npm run build
+      
+    - name: Run Tests
+      run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+    # Publish to NPM using Trusted Publishing (OIDC)
+    - name: Publish to NPM
+      if: github.event_name == 'release'
+      # --provenance links the NPM package to this exact GitHub Action run
+      run: npm publish ./dist/ngx-cookie-manager --provenance --access public
