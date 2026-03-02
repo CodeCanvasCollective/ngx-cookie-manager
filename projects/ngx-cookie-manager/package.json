@@ -1,6 +1,22 @@
 {
   "name": "ngx-cookie-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "Angular Cookie Manager for Browser and SSR",
+  "keywords": [
+    "angular",
+    "cookie",
+    "cookies",
+    "manager",
+    "service",
+    "ssr"
+  ],
+  "homepage": "https://github.com/CodeCanvasCollective/ngx-cookie-manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeCanvasCollective/ngx-cookie-manager.git"
+  },
+  "author": "Lasantha Lakmal",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": ">=20.0.0",
     "@angular/core": ">=20.0.0"
