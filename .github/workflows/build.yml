@@ -3,10 +3,9 @@ name: Build, Test and Publish
 on:
   push:
     branches: [ master, main ]
+    tags: [ 'v*' ] # Triggers on tags like v1.0.0, v1.1.0, etc.
   pull_request:
     branches: [ master, main ]
-  release:
-    types: [created]
 
 # Required for Trusted Publishing (OIDC)
 permissions:
@@ -37,8 +36,7 @@ jobs:
     - name: Run Tests
       run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-    # Publish to NPM using Trusted Publishing (OIDC)
+    # Publish to NPM only when a tag starting with 'v' is pushed
     - name: Publish to NPM
-      if: github.event_name == 'release'
-      # --provenance links the NPM package to this exact GitHub Action run
+      if: startsWith(github.ref, 'refs/tags/v')
       run: npm publish ./dist/ngx-cookie-manager --provenance --access public
