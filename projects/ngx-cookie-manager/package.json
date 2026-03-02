@@ -1,6 +1,6 @@
 {
   "name": "ngx-cookie-manager",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Angular Cookie Manager for Browser and SSR",
   "keywords": [
     "angular",
