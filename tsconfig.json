@@ -9,7 +9,7 @@
     "noImplicitReturns": true,
     "paths": {
       "ngx-cookie-manager": [
-        "./dist/ngx-cookie-manager"
+        "./src/public-api.ts"
       ]
     },
     "noFallthroughCasesInSwitch": true,
@@ -29,10 +29,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/ngx-cookie-manager/tsconfig.lib.json"
+      "path": "./tsconfig.lib.json"
     },
     {
-      "path": "./projects/ngx-cookie-manager/tsconfig.spec.json"
+      "path": "./tsconfig.spec.json"
     }
   ]
 }

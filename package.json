@@ -1,6 +1,22 @@
 {
   "name": "ngx-cookie-manager",
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "description": "Angular Cookie Manager for Browser and SSR",
+  "keywords": [
+    "angular",
+    "cookie",
+    "cookies",
+    "manager",
+    "service",
+    "ssr"
+  ],
+  "homepage": "https://github.com/CodeCanvasCollective/ngx-cookie-manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeCanvasCollective/ngx-cookie-manager.git"
+  },
+  "author": "Lasantha Lakmal",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,23 +24,26 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "packageManager": "npm@11.5.2",
+  "peerDependencies": {
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0"
+  },
   "dependencies": {
-    "@angular/common": "^21.2.0",
-    "@angular/compiler": "^21.2.0",
-    "@angular/core": "^21.2.0",
-    "@angular/forms": "^21.2.0",
-    "@angular/platform-browser": "^21.2.0",
-    "@angular/router": "^21.2.0",
-    "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.2.0",
     "@angular/build": "^21.2.0",
     "@angular/cli": "^21.2.0",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
     "@angular/compiler-cli": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
@@ -34,6 +53,11 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.2.0",
     "prettier": "^3.8.1",
-    "typescript": "~5.9.2"
+    "rxjs": "~7.8.0",
+    "typescript": "~5.9.2",
+    "zone.js": "~0.15.0"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.3"
   }
 }

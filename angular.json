@@ -1,33 +1,38 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "ngx-cookie-manager": {
       "projectType": "library",
-      "root": "projects/ngx-cookie-manager",
-      "sourceRoot": "projects/ngx-cookie-manager/src",
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular/build:ng-packagr",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ng-package.json"
+          },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-cookie-manager/tsconfig.lib.prod.json"
+              "tsConfig": "tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-cookie-manager/tsconfig.lib.json"
+              "tsConfig": "tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-cookie-manager/tsconfig.spec.json"
+            "tsConfig": "tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
