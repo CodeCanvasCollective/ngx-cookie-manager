@@ -1,59 +1,32 @@
-# NgxCookieManager
+# ngx-cookie-manager (Modern Angular Library)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+This is a professional, modernized version of the `ngx-cookie-manager` library.
 
-## Development server
+## ✨ Highlights
+- **Angular 19 Ready**: Built with the latest Angular Package Format.
+- **Standalone Support**: Fully compatible with the modern `bootstrapApplication`.
+- **SSR Compatible**: Safely handles cookies in Server-Side Rendering (Angular Universal).
+- **Automated CI/CD**: Integrated with GitHub Actions for automated building, testing, and NPM deployment via **Trusted Publishers (OIDC)**.
 
-To start a local development server, run:
+## 📁 Repository Structure
+- `projects/ngx-cookie-manager`: The library source code.
+- `.github/workflows/build.yml`: CI/CD pipeline for build, test, and automated NPM release on tags.
+- `dist/`: Build output directory (generated after `npm run build`).
 
+## 🚀 Development
 ```bash
-ng serve
+npm install
+npm run build
+npm run test
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## 📦 Publishing to NPM
+To release a new version:
+1. Update `version` in `projects/ngx-cookie-manager/package.json`.
+2. Push a tag starting with `v`:
 ```bash
-ng generate component component-name
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more details, see the [Library Documentation](./projects/ngx-cookie-manager/README.md).
