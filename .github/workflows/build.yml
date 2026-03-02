@@ -35,4 +35,4 @@ jobs:
     # Publish to NPM using Trusted Publishing (OIDC)
     - name: Publish to NPM
       if: startsWith(github.ref, 'refs/tags/v')
-      run: npm publish ./dist/ngx-cookie-manager --provenance
+      run: npm publish ./dist/ngx-cookie-manager
